@@ -4,6 +4,7 @@ ext.versions = [
         androidCompileSdk: 24,
         androidBuildTools: '24.0.1',
         androidSupportLibrary: '24.2.0',
+        androidGradlePlugin: '2.2.1',
 
         jUnit: '4.12',
         espresso: '2.2.2'
@@ -16,4 +17,8 @@ ext.library = [
         // Test dependencies
         jUnit: "junit:junit:$versions.jUnit",
         espressoCore: "com.android.support.test.espresso:espresso-core:$versions.espresso"
+]
+
+ext.plugin = [
+        android: "com.android.tools.build:gradle:$versions.androidGradlePlugin"
 ]
