@@ -1,0 +1,6 @@
+ext.versions = [
+        androidMinSdk: 19,
+        androidTargetSdk: 24,
+        androidCompileSdk: 24,
+        androidBuildTools: '24.0.1'
+]
