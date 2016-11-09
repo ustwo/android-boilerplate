@@ -6,6 +6,8 @@ ext.versions = [
         androidSupportLibrary: '24.2.0',
         androidGradlePlugin: '2.2.1',
 
+        dagger: '2.7',
+
         jUnit: '4.12',
         espresso: '2.2.2'
 ]
@@ -13,6 +15,9 @@ ext.versions = [
 ext.library = [
         // Android dependencies
         androidSupportAppCompat: "com.android.support:appcompat-v7:$versions.androidSupportLibrary",
+
+        dagger: "com.google.dagger:dagger:$versions.dagger",
+        daggerCompiler: "com.google.dagger:dagger-compiler:$versions.dagger",
 
         // Test dependencies
         jUnit: "junit:junit:$versions.jUnit",
