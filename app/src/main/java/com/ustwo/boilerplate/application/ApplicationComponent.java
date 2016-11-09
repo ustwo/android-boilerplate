@@ -1,5 +1,9 @@
 package com.ustwo.boilerplate.application;
 
+import android.content.Context;
+
+import com.ustwo.boilerplate.base.BaseComponent;
+
 import javax.inject.Singleton;
 
 import dagger.Component;
@@ -8,5 +12,6 @@ import dagger.Component;
 @Component(modules = {
     ApplicationModule.class
 })
-public interface ApplicationComponent {
+interface ApplicationComponent extends BaseComponent {
+  Context getContext();
 }
