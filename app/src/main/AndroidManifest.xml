@@ -2,7 +2,7 @@
           package="com.ustwo.boilerplate">
 
     <application
-            android:name=".application.Application"
+            android:name=".application.BoilerplateApplication"
             android:allowBackup="true"
             android:label="@string/app_name"
             android:icon="@mipmap/ic_launcher"
