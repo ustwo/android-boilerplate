@@ -15,5 +15,8 @@ This project consists of the following modules:
 * [Android Studio](https://developer.android.com/studio/index.html), Provides the fastest tools for building apps on every type of Android device.
 * [Gradle](https://gradle.org/), An open source build automation system.
 
+## Updating gitignore
+The gitignore file is generated using [GitIgnore.io](https://gitignore.io) and using [Android and Intellij](https://www.gitignore.io/api/android,intellij) for the selected technologies. This allows for easy updating when tools are updated or otherwise when required.
+
 ## Contact
 [open.source@ustwo.com](mailto:open.source@ustwo.com)
