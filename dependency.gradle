@@ -12,7 +12,9 @@ ext.versions = [
         rxLint: '1.0',
 
         jUnit: '4.12',
-        espresso: '2.2.2'
+        espresso: '2.2.2',
+
+        retrolambdaGradlePlugin: '3.3.1',
 ]
 
 ext.library = [
@@ -31,5 +33,6 @@ ext.library = [
 ]
 
 ext.plugin = [
-        android: "com.android.tools.build:gradle:$versions.androidGradlePlugin"
+        android: "com.android.tools.build:gradle:$versions.androidGradlePlugin",
+        retrolambda: "me.tatarka:gradle-retrolambda:$versions.retrolambdaGradlePlugin",
 ]
