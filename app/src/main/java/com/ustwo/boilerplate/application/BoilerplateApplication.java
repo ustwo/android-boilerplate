@@ -1,6 +1,8 @@
 package com.ustwo.boilerplate.application;
 
-public class Application extends android.app.Application {
+import android.app.Application;
+
+public class BoilerplateApplication extends Application {
 
   private final ApplicationComponent applicationComponent = createComponent();
 
