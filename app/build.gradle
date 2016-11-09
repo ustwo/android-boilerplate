@@ -34,6 +34,9 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile library.androidSupportAppCompat
 
+    compile library.dagger
+    annotationProcessor library.daggerCompiler
+
     testCompile library.jUnit
 
     androidTestCompile(library.espressoCore) {
