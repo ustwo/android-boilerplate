@@ -37,6 +37,9 @@ dependencies {
     compile library.dagger
     annotationProcessor library.daggerCompiler
 
+    compile library.rxJava
+    compile library.rxLint
+
     testCompile library.jUnit
 
     androidTestCompile(library.espressoCore) {
