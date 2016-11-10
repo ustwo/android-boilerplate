@@ -1,0 +1,20 @@
+plugins.apply('findbugs')
+
+task findbugs(type: FindBugs) {
+    ignoreFailures = false
+    effort = 'max'
+    reportLevel = 'low'
+
+    reports {
+        html.enabled = true
+        xml.enabled = false
+    }
+
+    classes = files("${project.projectDir}/build/intermediates/classes")
+
+    // Relative to the module
+    source = fileTree('src/main/java')
+    classpath = files()
+
+    excludeFilter = new File("${project.rootDir}/config/findbugs.xml")
+}

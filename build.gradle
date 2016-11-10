@@ -30,3 +30,9 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+subprojects {
+    afterEvaluate {
+        tasks.findByName('findbugs').dependsOn('assemble')
+    }
+}

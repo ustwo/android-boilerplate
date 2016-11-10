@@ -2,6 +2,9 @@ apply plugin: 'com.android.application'
 apply plugin: 'me.tatarka.retrolambda'
 apply plugin: 'spoon'
 apply plugin: 'net.ltgt.errorprone'
+apply plugin: 'findbugs'
+
+apply from: '../config/findbugs.gradle'
 
 android {
     compileSdkVersion versions.androidCompileSdk
