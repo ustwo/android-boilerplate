@@ -5,12 +5,16 @@ buildscript {
     apply from: 'dependency.gradle'
 
     repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
         jcenter()
     }
     dependencies {
         classpath plugin.android
         classpath plugin.retrolambda
         classpath plugin.spoon
+        classpath plugin.errorProne
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
