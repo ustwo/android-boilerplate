@@ -11,7 +11,7 @@ public abstract class BasePresenter<T extends BaseView> {
   private T view;
 
   /**
-   * On view attached.
+   * On view attached. To be called when your view is initialised.
    *
    * @param view View attached to the presenter
    */
@@ -25,7 +25,8 @@ public abstract class BasePresenter<T extends BaseView> {
   }
 
   /**
-   * On view detached.
+   * On view detached. Intended as a cleanup process that should be called when the view will no
+   * longer be in use.
    */
   @CallSuper
   public void onViewDetached() {
