@@ -5,6 +5,7 @@ apply plugin: 'net.ltgt.errorprone'
 apply plugin: 'findbugs'
 
 apply from: '../config/findbugs.gradle'
+apply from: '../config/pmd.gradle'
 
 android {
     compileSdkVersion versions.androidCompileSdk
