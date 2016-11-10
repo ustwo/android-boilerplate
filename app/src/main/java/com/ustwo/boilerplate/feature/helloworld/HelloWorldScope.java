@@ -1,0 +1,11 @@
+package com.ustwo.boilerplate.feature.helloworld;
+
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+
+import javax.inject.Scope;
+
+@Scope
+@Retention(RetentionPolicy.RUNTIME)
+public @interface HelloWorldScope {
+}

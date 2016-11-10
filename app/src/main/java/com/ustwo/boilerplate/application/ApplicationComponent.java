@@ -12,6 +12,6 @@ import dagger.Component;
 @Component(modules = {
     ApplicationModule.class
 })
-interface ApplicationComponent extends BaseComponent {
+public interface ApplicationComponent extends BaseComponent {
   Context getContext();
 }
