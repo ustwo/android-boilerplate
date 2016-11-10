@@ -13,8 +13,10 @@ ext.versions = [
 
         jUnit: '4.12',
         espresso: '2.2.2',
+        spoon: '1.7.0',
 
         retrolambdaGradlePlugin: '3.3.1',
+        spoonGradlePlugin: '1.2.2'
 ]
 
 ext.library = [
@@ -29,10 +31,12 @@ ext.library = [
 
         // Test dependencies
         jUnit: "junit:junit:$versions.jUnit",
-        espressoCore: "com.android.support.test.espresso:espresso-core:$versions.espresso"
+        espressoCore: "com.android.support.test.espresso:espresso-core:$versions.espresso",
+        spoon: "com.squareup.spoon:spoon-client:$versions.spoon"
 ]
 
 ext.plugin = [
         android: "com.android.tools.build:gradle:$versions.androidGradlePlugin",
         retrolambda: "me.tatarka:gradle-retrolambda:$versions.retrolambdaGradlePlugin",
+        spoon: "com.stanfy.spoon:spoon-gradle-plugin:$versions.spoonGradlePlugin"
 ]
