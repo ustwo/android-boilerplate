@@ -51,4 +51,5 @@ dependencies {
     androidTestCompile(library.espressoCore) {
         exclude group: 'com.android.support', module: 'support-annotations'
     }
+    androidTestAnnotationProcessor library.daggerCompiler
 }
