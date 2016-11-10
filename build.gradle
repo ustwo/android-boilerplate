@@ -34,5 +34,6 @@ task clean(type: Delete) {
 subprojects {
     afterEvaluate {
         tasks.findByName('findbugs').dependsOn('assemble')
+        tasks.findByName('pmd').dependsOn('assemble')
     }
 }
