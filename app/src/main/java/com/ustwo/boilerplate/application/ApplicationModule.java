@@ -1,5 +1,6 @@
 package com.ustwo.boilerplate.application;
 
+import android.app.Application;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
