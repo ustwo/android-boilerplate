@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'me.tatarka.retrolambda'
+apply plugin: 'com.getkeepsafe.dexcount'
 apply plugin: 'spoon'
 apply plugin: 'net.ltgt.errorprone'
 apply plugin: 'findbugs'

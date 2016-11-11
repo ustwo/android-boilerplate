@@ -16,6 +16,7 @@ ext.versions = [
         spoon: '1.7.0',
 
         retrolambdaGradlePlugin: '3.3.1',
+        dexCountGradlePlugin: '0.6.1',
         spoonGradlePlugin: '1.2.2',
         errorProneGradlePlugin: '0.0.8'
 ]
@@ -40,5 +41,6 @@ ext.plugin = [
         android: "com.android.tools.build:gradle:$versions.androidGradlePlugin",
         retrolambda: "me.tatarka:gradle-retrolambda:$versions.retrolambdaGradlePlugin",
         spoon: "com.stanfy.spoon:spoon-gradle-plugin:$versions.spoonGradlePlugin",
-        errorProne: "net.ltgt.gradle:gradle-errorprone-plugin:$versions.errorProneGradlePlugin"
+        errorProne: "net.ltgt.gradle:gradle-errorprone-plugin:$versions.errorProneGradlePlugin",
+        dexCount: "com.getkeepsafe.dexcount:dexcount-gradle-plugin:$versions.dexCountGradlePlugin"
 ]
