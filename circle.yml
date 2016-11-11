@@ -1,9 +1,19 @@
+machine:
+  environment:
+    ANDROID_BUILD_TOOLS: 24.0.1
+    ANDROID_PLATFORM: 24
+
 dependencies:
   pre:
-    - echo y | android update sdk --no-ui --all --filter build-tools-24.0.1
-    - echo y | android update sdk --no-ui --all --filter "android-24"
+    - if [ ! -e $ANDROID_HOME/build-tools/$ANDROID_BUILD_TOOLS ]; then echo y | android update sdk --no-ui --all --filter build-tools-$ANDROID_BUILD_TOOLS; fi
+    - if [ ! -e $ANDROID_SDK/platforms/android-$ANDROID_PLATFORM ]; then echo y | android update sdk --no-ui --all --filter "android-$ANDROID_PLATFORM"; fi
+
+  cache_directories:
+    - /usr/local/android-sdk-linux/build-tools/$ANDROID_BUILD_TOOLS
+    - /usr/local/android-sdk-linux/platforms/android-$ANDROID_PLATFORM
+    - /usr/local/android-sdk-linux/tools
 
 test:
   override:
         - ./gradlew test assembleDebug countDebugDexMethods -PdisablePreDex
-        - cp -r app/build/outputs/dexcount/debugChart/* $CIRCLE_TEST_REPORTS
+        - cp -r app/build/outputs/dexcount/debugChart/* $CIRCLE_TEST_REPORTS/dexcount
