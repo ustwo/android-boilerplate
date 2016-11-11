@@ -15,5 +15,8 @@ dependencies:
 
 test:
   override:
-        - ./gradlew test assembleDebug countDebugDexMethods -PdisablePreDex
+        - ./gradlew lint test assembleDebug countDebugDexMethods -PdisablePreDex
+        - mkdir $CIRCLE_TEST_REPORTS/dexcount
         - cp -r app/build/outputs/dexcount/debugChart/* $CIRCLE_TEST_REPORTS/dexcount
+        - mkdir $CIRCLE_TEST_REPORTS/lint
+        - cp app/build/outputs/lint-results-debug.html $CIRCLE_TEST_REPORTS/lint
