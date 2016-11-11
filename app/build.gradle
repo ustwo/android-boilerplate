@@ -68,3 +68,14 @@ spoon {
     sequential = true
     grantAllPermissions = true
 }
+
+dexcount {
+    format = "list"
+    includeClasses = false
+    includeFieldCount = true
+    includeTotalMethodCount = true
+    orderByMethodCount = false
+    verbose = false
+    maxTreeDepth = Integer.MAX_VALUE
+    runOnEachAssemble = false
+}
