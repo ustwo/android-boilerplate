@@ -7,6 +7,7 @@ dependencies:
   pre:
     - if [ ! -e $ANDROID_HOME/build-tools/$ANDROID_BUILD_TOOLS ]; then echo y | android update sdk --no-ui --all --filter build-tools-$ANDROID_BUILD_TOOLS; fi
     - if [ ! -e $ANDROID_SDK/platforms/android-$ANDROID_PLATFORM ]; then echo y | android update sdk --no-ui --all --filter "android-$ANDROID_PLATFORM"; fi
+    - if [ ! -e $ANDROID_SDK/system-images/android-$ANDROID_PLATFORM ]; then echo y | android update sdk --no-ui --all --filter "sys-img-arm64-v8a-google_apis-$ANDROID_PLATFORM"; fi
 
   cache_directories:
     - /usr/local/android-sdk-linux/build-tools/$ANDROID_BUILD_TOOLS
@@ -14,9 +15,21 @@ dependencies:
     - /usr/local/android-sdk-linux/tools
 
 test:
+  pre:
+    - echo no | android create avd -n custom-android-googleapis -t "android-$ANDROID_PLATFORM" --abi google_apis/arm64-v8a
+    - emulator -avd custom-android-googleapis -no-audio -no-window:
+        background: true
+        parallel: true
+    - circle-android wait-for-boot
+
   override:
-        - ./gradlew lint test assembleDebug countDebugDexMethods -PdisablePreDex
-        - mkdir $CIRCLE_TEST_REPORTS/dexcount
-        - cp -r app/build/outputs/dexcount/debugChart/* $CIRCLE_TEST_REPORTS/dexcount
-        - mkdir $CIRCLE_TEST_REPORTS/lint
-        - cp app/build/outputs/lint-results-debug.html $CIRCLE_TEST_REPORTS/lint
+    - ./gradlew lint test assembleDebug countDebugDexMethods -PdisablePreDex
+    - ./gradlew spoon
+
+  post:
+    - mkdir $CIRCLE_TEST_REPORTS/dexcount
+    - cp -r app/build/outputs/dexcount/debugChart/* $CIRCLE_TEST_REPORTS/dexcount
+    - mkdir $CIRCLE_TEST_REPORTS/lint
+    - cp app/build/outputs/lint-results-debug.html $CIRCLE_TEST_REPORTS/lint
+    - mkdir $CIRCLE_TEST_REPORTS/spoon
+    - cp -r app/build/spoon/debug $CIRCLE_TEST_REPORTS/spoon
