@@ -6,12 +6,12 @@ machine:
 dependencies:
   pre:
     - if [ ! -e $ANDROID_HOME/build-tools/$ANDROID_BUILD_TOOLS ]; then echo y | android update sdk --no-ui --all --filter build-tools-$ANDROID_BUILD_TOOLS; fi
-    - if [ ! -e $ANDROID_SDK/platforms/android-$ANDROID_PLATFORM ]; then echo y | android update sdk --no-ui --all --filter "android-$ANDROID_PLATFORM"; fi
+    - if [ ! -e $ANDROID_HOME/platforms/android-$ANDROID_PLATFORM ]; then echo y | android update sdk --no-ui --all --filter "android-$ANDROID_PLATFORM"; fi
 
   cache_directories:
-    - /usr/local/android-sdk-linux/build-tools/$ANDROID_BUILD_TOOLS
-    - /usr/local/android-sdk-linux/platforms/android-$ANDROID_PLATFORM
-    - /usr/local/android-sdk-linux/tools
+    - "${ANDROID_HOME}/build-tools/${ANDROID_BUILD_TOOLS}"
+    - "${ANDROID_HOME}/platforms/android-${ANDROID_PLATFORM}"
+    - "${ANDROID_HOME}/tools}"
 
 test:
   pre:
