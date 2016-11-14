@@ -17,7 +17,7 @@ dependencies:
 test:
   pre:
     - echo no | android create avd -n custom-android-googleapis -t "android-$ANDROID_PLATFORM" --abi google_apis/arm64-v8a
-    - emulator -avd custom-android-googleapis -no-audio -no-window:
+    - emulator -avd custom-android-googleapis -no-boot-anim -no-window:
         background: true
         parallel: true
     - circle-android wait-for-boot
