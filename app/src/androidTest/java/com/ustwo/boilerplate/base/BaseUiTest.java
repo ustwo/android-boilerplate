@@ -12,7 +12,7 @@ public class BaseUiTest {
     try {
       Spoon.screenshot(activity, screenshotName);
     } catch (RuntimeException exception) {
-      System.out.println("To capture screenshots run with spoon enabled");
+      System.err.println("To capture screenshots run with spoon enabled");
     }
   }
 }
