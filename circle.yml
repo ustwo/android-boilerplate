@@ -19,6 +19,7 @@ test:
                 background: true
                 parallel: true
     - circle-android wait-for-boot
+    - adb shell input keyevent 82
 
   override:
     - ./gradlew lint test assembleDebug countDebugDexMethods -PdisablePreDex
