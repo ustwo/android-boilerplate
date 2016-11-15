@@ -14,16 +14,9 @@ dependencies:
     - "${ANDROID_HOME}/tools}"
 
 test:
-  pre:
-    - emulator -avd circleci-android23 -no-audio -no-window:
-                background: true
-                parallel: true
-    - circle-android wait-for-boot
-    - adb shell input keyevent 82
-
   override:
     - ./gradlew lint test assembleDebug countDebugDexMethods -PdisablePreDex
-    - ./gradlew spoon
+    - scripts/remoteTesting.sh
 
   post:
     - mkdir $CIRCLE_TEST_REPORTS/dexcount
