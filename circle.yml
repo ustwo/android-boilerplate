@@ -1,5 +1,6 @@
 machine:
   environment:
+    ANDROID_HOME: /usr/local/android-sdk-linux
     ANDROID_BUILD_TOOLS: 24.0.1
     ANDROID_PLATFORM: 24
 
@@ -15,8 +16,8 @@ dependencies:
     - cp -r $HOME/android_sdk $ANDROID_HOME
 
   cache_directories:
-    - "~/android_sdk/build-tools/${ANDROID_BUILD_TOOLS}"
-    - "~/android_sdk/platforms/android-${ANDROID_PLATFORM}"
+    - "~/android_sdk/build-tools/${NDROID_BUILD_TOOLS"
+    - "~/android_sdk/platforms/android-$ANDROID_PLATFORM"
     - "~/android_sdk/tools"
 
 test:
