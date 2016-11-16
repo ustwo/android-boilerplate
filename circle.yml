@@ -2,6 +2,7 @@ machine:
   environment:
     ANDROID_BUILD_TOOLS: 24.0.1
     ANDROID_PLATFORM: 24
+
   post:
     - cp -r $ANDROID_HOME $HOME/android_sdk
 
@@ -28,5 +29,3 @@ test:
     - cp -r app/build/outputs/dexcount/debugChart/* $CIRCLE_TEST_REPORTS/dexcount
     - mkdir $CIRCLE_TEST_REPORTS/lint
     - cp app/build/outputs/lint-results-debug.html $CIRCLE_TEST_REPORTS/lint
-    - mkdir $CIRCLE_TEST_REPORTS/spoon
-    - cp -r app/build/spoon/debug $CIRCLE_TEST_REPORTS/spoon
