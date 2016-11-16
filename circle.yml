@@ -11,17 +11,17 @@ dependencies:
     - if [ ! -e $ANDROID_HOME/build-tools/$ANDROID_BUILD_TOOLS ]; then echo y | android update sdk --no-ui --all --filter build-tools-$ANDROID_BUILD_TOOLS; fi
     - if [ ! -e $ANDROID_HOME/platforms/android-$ANDROID_PLATFORM ]; then echo y | android update sdk --no-ui --all --filter "android-${ANDROID_PLATFORM}"; fi
 
+  post:
+    - cp -r $HOME/android_sdk $ANDROID_HOME
+
   cache_directories:
     - "~/android_sdk/build-tools/${ANDROID_BUILD_TOOLS}"
     - "~/android_sdk/platforms/android-${ANDROID_PLATFORM}"
     - "~/android_sdk/tools"
-  
-  post:
-    - cp -r $HOME/android_sdk $ANDROID_HOME
 
 test:
   override:
-    - ./gradlew lint test assembleDebug countDebugDexMethods -PdisablePreDex
+    - ./gradlew lint test assembleDebug assembleAndroidTest countDebugDexMethods -PdisablePreDex
     - scripts/remoteTesting.sh
 
   post:
