@@ -21,7 +21,7 @@ if [ -n "${GCLOUD_SERVICE_KEY+1}" ]; then
 
     TEST_OUTPUT_FOLDER=testResults
     mkdir $TEST_OUTPUT_FOLDER
-    gsutil -m cp -R -U gs://test-lab-$BUCKET_ID $TEST_OUTPUT_FOLDER
+    gsutil -m cp -R -U gs://test-lab-$BUCKET_ID $TEST_OUTPUT_FOLDER || true
 
     mkdir $CIRCLE_TEST_REPORTS/cloudTesting
     cp -r $TEST_OUTPUT_FOLDER $CIRCLE_TEST_REPORTS/cloudTesting
