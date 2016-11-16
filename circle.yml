@@ -2,6 +2,10 @@ machine:
   environment:
     ANDROID_BUILD_TOOLS: 24.0.1
     ANDROID_PLATFORM: 24
+    
+machine:
+  post:
+    - cp -r $ANDROID_HOME $HOME/android_sdk
 
 dependencies:
   pre:
@@ -9,9 +13,12 @@ dependencies:
     - if [ ! -e $ANDROID_HOME/platforms/android-$ANDROID_PLATFORM ]; then echo y | android update sdk --no-ui --all --filter "android-$ANDROID_PLATFORM"; fi
 
   cache_directories:
-    - "${ANDROID_HOME}/build-tools/${ANDROID_BUILD_TOOLS}"
-    - "${ANDROID_HOME}/platforms/android-${ANDROID_PLATFORM}"
-    - "${ANDROID_HOME}/tools}"
+    - "~/android_sdk/build-tools/${ANDROID_BUILD_TOOLS}"
+    - "~/android_sdk/platforms/android-${ANDROID_PLATFORM}"
+    - "~/android_sdk/tools"
+  
+  post:
+    - cp -r $HOME/android_sdk $ANDROID_HOME
 
 test:
   override:
