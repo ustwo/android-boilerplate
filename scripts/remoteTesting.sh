@@ -1,3 +1,6 @@
+#!/bin/bash
+set -e
+
 if [ -n "${GCLOUD_SERVICE_KEY+1}" ]; then
     sudo pip install -U crcmod
     echo $GCLOUD_SERVICE_KEY > ${HOME}/client-secret.json
