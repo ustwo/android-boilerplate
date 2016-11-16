@@ -12,7 +12,7 @@ if [ -n "${GCLOUD_SERVICE_KEY+1}" ]; then
 
     $GCLOUD beta test android run --type instrumentation --uri --app ../app/build/outputs/apk/app-debug.apk --test ../app/build/outputs/apk/app-debug-androidTest.apk --orientations portrait --project $GCLOUD_PROJECT_ID > $GCLOUD_OUTPUT_LOG 2>&1
 
-    BUCKET_ID=`cat output.txt | sed -n -E 's#^.+test-lab-(.+)/.+#\1#p'`
+    BUCKET_ID=`cat $GCLOUD_OUTPUT_LOG | sed -n -E 's#^.+test-lab-(.+)/.+#\1#p'`
 
     echo $BUCKET_ID
 
