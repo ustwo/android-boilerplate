@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+set -x
 
 if [ -n "${GCLOUD_SERVICE_KEY+1}" ]; then
     sudo pip install -U crcmod
