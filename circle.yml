@@ -16,7 +16,7 @@ dependencies:
 
 test:
   override:
-    - ./gradlew lint test assembleDebug assembleAndroidTest countDebugDexMethods -PdisablePreDex
+    - ./gradlew lint testDebugUnitTestCoverage assembleDebug assembleAndroidTest countDebugDexMethods -PdisablePreDex
     - scripts/remoteTesting.sh
 
   post:
@@ -24,3 +24,7 @@ test:
     - cp -r app/build/outputs/dexcount/debugChart/* $CIRCLE_TEST_REPORTS/dexcount
     - mkdir $CIRCLE_TEST_REPORTS/lint
     - cp app/build/outputs/lint-results-debug.html $CIRCLE_TEST_REPORTS/lint
+    - mkdir $CIRCLE_TEST_REPORTS/test
+    - cp -r app/build/reports/tests/debug $CIRCLE_TEST_REPORTS/test
+    - mkdir $CIRCLE_TEST_REPORTS/jacoco
+    - cp -r app/build/reports/jacoco/testDebugUnitTestCoverage/html $CIRCLE_TEST_REPORTS/jacoco
