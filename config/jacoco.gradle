@@ -1,0 +1,59 @@
+apply plugin: 'jacoco'
+
+project.afterEvaluate {
+    def buildTypes = android.buildTypes.collect { type -> type.name }
+    def productFlavors = android.productFlavors.collect { flavor -> flavor.name }
+
+    if (!productFlavors) productFlavors.add('')
+
+    productFlavors.each { productFlavorName ->
+        buildTypes.each { buildTypeName ->
+            def sourceName, sourcePath
+            if (!productFlavorName) {
+                sourceName = sourcePath = "${buildTypeName}"
+            } else {
+                sourceName = "${productFlavorName}${buildTypeName.capitalize()}"
+                sourcePath = "${productFlavorName}/${buildTypeName}"
+            }
+            def testTaskName = "test${sourceName.capitalize()}UnitTest"
+            def coverageTaskName = "${testTaskName}Coverage"
+
+            task "${coverageTaskName}"(type: JacocoReport, dependsOn: "$testTaskName") {
+                group = 'Reporting'
+                description = "Generate Jacoco coverage reports for the ${sourceName.capitalize()} build."
+
+                classDirectories = fileTree(
+                        dir: "${project.buildDir}/intermediates/classes/${sourcePath}",
+                        excludes: ['**/R.class',
+                                   '**/R$*.class',
+                                   '**/*$ViewInjector*.*',
+                                   '**/*$ViewBinder*.*',
+                                   '**/BuildConfig.*',
+                                   '**/Manifest*.*',
+                                   '**/*$Lambda$*.*',
+                                   '**/*$$*.*',
+                                   '**/*.old.*.class',
+                                   '**/*Module.*',
+                                   '**/*Dagger*.*',
+                                   '**/*MembersInjector*.*',
+                                   '**/*_Provide*Factory*.*']
+                )
+
+                def coverageSourceDirs = [
+                        'src/main/java'
+                ]
+
+                additionalSourceDirs = files(coverageSourceDirs)
+                sourceDirectories = files(coverageSourceDirs)
+                executionData = files("${project.buildDir}/jacoco/${testTaskName}.exec")
+
+                reports {
+                    xml.enabled = false
+                    html.enabled = true
+                }
+            }
+
+            build.dependsOn "${coverageTaskName}"
+        }
+    }
+}
