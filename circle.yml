@@ -21,7 +21,7 @@ test:
     - if [ ! -n "${GCLOUD_SERVICE_KEY+1}" ]; then emulator -avd circleci-android24 -no-audio -no-window; fi:
                 background: true
                 parallel: true
-    - if [ ! -n "${GCLOUD_SERVICE_KEY+1}" ]; then circle-android wait-for-boot; fi:
+    - if [ ! -n "${GCLOUD_SERVICE_KEY+1}" ]; then circle-android wait-for-boot; fi
 
   override:
     - scripts/ci.sh $CIRCLE_TEST_REPORTS
