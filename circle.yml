@@ -17,10 +17,14 @@ dependencies:
     - /usr/local/android-sdk-linux/tools
 
 test:
+  pre:
+    - if [ ! -n "${GCLOUD_SERVICE_KEY+1}" ]; then emulator -avd circleci-android24 -no-audio -no-window; fi:
+                background: true
+                parallel: true
+    - if [ ! -n "${GCLOUD_SERVICE_KEY+1}" ]; then circle-android wait-for-boot; fi:
+
   override:
-    - ./gradlew lint testDebugUnitTestCoverage assembleDebug assembleAndroidTest countDebugDexMethods -PdisablePreDex
-    - ./gradlew assembleRelease -PdisablePreDex
-    - scripts/remoteTesting.sh
+    - scripts/ci.sh $CIRCLE_TEST_REPORTS
 
   post:
     - mkdir $CIRCLE_TEST_REPORTS/dexcount
