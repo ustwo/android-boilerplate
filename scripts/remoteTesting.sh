@@ -1,5 +1,7 @@
 #!/bin/bash
-set -e
+set -xe
+
+report_location=$1
 
 if [ -n "${GCLOUD_SERVICE_KEY+1}" ]; then
     sudo pip install -U crcmod
@@ -23,9 +25,11 @@ if [ -n "${GCLOUD_SERVICE_KEY+1}" ]; then
     mkdir $TEST_OUTPUT_FOLDER
     gsutil -m cp -R -U gs://test-lab-$BUCKET_ID $TEST_OUTPUT_FOLDER || true
 
-    mkdir $CIRCLE_TEST_REPORTS/cloudTesting
-    cp -r $TEST_OUTPUT_FOLDER $CIRCLE_TEST_REPORTS/cloudTesting
+    mkdir $report_location/cloudTesting
+    cp -r $TEST_OUTPUT_FOLDER $report_location/cloudTesting
 
     rm $GCLOUD_OUTPUT_LOG
     rm -r $TEST_OUTPUT_FOLDER
+else 
+    echo "GCLOUD_SERVICE_KEY environment variable not set. This is required to run remote testing on Firebase."
 fi

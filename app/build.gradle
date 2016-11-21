@@ -40,6 +40,9 @@ android {
 
     buildTypes {
         debug {
+            versionNameSuffix " Debug"
+            applicationIdSuffix ".debug"
+
             testCoverageEnabled true
             signingConfig signingConfigs.debug
         }
