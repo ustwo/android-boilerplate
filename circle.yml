@@ -6,6 +6,8 @@ machine:
 
 dependencies:
   pre:
+    - openssl aes-256-cbc -d -in ci-keys.cipher -k $CI_SECRETS_KEY >> ~/.circlerc
+    - openssl aes-256-cbc -d -in release.keystore.cipher -out release.keystore -k $CI_SECRETS_KEY
     - if [ ! -e $ANDROID_HOME/build-tools/$ANDROID_BUILD_TOOLS ]; then echo y | android update sdk --no-ui --all --filter build-tools-$ANDROID_BUILD_TOOLS; fi
     - if [ ! -e $ANDROID_HOME/platforms/android-$ANDROID_PLATFORM ]; then echo y | android update sdk --no-ui --all --filter "android-${ANDROID_PLATFORM}"; fi
 
@@ -17,6 +19,7 @@ dependencies:
 test:
   override:
     - ./gradlew lint testDebugUnitTestCoverage assembleDebug assembleAndroidTest countDebugDexMethods -PdisablePreDex
+    - ./gradlew assembleRelease -PdisablePreDex
     - scripts/remoteTesting.sh
 
   post:
@@ -28,3 +31,4 @@ test:
     - cp -r app/build/reports/tests/debug $CIRCLE_TEST_REPORTS/test
     - mkdir $CIRCLE_TEST_REPORTS/jacoco
     - cp -r app/build/reports/jacoco/testDebugUnitTestCoverage/html $CIRCLE_TEST_REPORTS/jacoco
+    - cp app/build/outputs/apk/app-release.apk $CIRCLE_ARTIFACTS
