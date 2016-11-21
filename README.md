@@ -34,7 +34,7 @@ The file `ci-keys.cipher` will then be ready to commit.
 The same process can be used with `release.keystore.cipher` when you need to replace or change the keystore with your own details.
 
 ### CI setup
-For the secrets and keystore to be used by your CI server you will need to export the environment variable `CI_SECRETS_KEY` with the default key listed above or your own if you've re-encrypted the secrets and keystore yourself.
+For the secrets and keystore to be used by your CI server you will need to export the environment variable `CI_SECRETS_KEY` with the default key listed above or your own if you've re-encrypted the secrets and keystore yourself. You will also need to ensure that openssl is added as a dependency / installed by default.
 
 ## Updating gitignore
 The gitignore file is generated using [GitIgnore.io](https://gitignore.io) and using [Android and Intellij](https://www.gitignore.io/api/android,intellij) for the selected technologies. This allows for easy updating when tools are updated or otherwise when required.
