@@ -2,7 +2,6 @@ package com.ustwo.boilerplate.base;
 
 import android.support.annotation.CallSuper;
 import android.support.annotation.NonNull;
-
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 
@@ -19,11 +18,10 @@ public class BasePresenter<T extends BaseView> {
    *
    * @param view View attached to the presenter
    */
-  @CallSuper
-  public void onViewAttached(@NonNull final T view) {
+  @CallSuper public void onViewAttached(@NonNull final T view) {
     if (this.view != null) {
-      throw new IllegalStateException("View " + this.view + " is already attached. Cannot attach "
-          + view);
+      throw new IllegalStateException(
+          "View " + this.view + " is already attached. Cannot attach " + view);
     }
     this.view = view;
   }
@@ -32,8 +30,7 @@ public class BasePresenter<T extends BaseView> {
    * On view detached. Intended as a cleanup process that should be called when the view will no
    * longer be in use.
    */
-  @CallSuper
-  public void onViewDetached() {
+  @CallSuper public void onViewDetached() {
     if (view == null) {
       throw new IllegalStateException("View is already detached");
     }
@@ -50,8 +47,7 @@ public class BasePresenter<T extends BaseView> {
    *
    * @param disposable Disposable to be disposed of upon view detachment
    */
-  @CallSuper
-  protected void disposeOnViewDetach(@NonNull final Disposable disposable) {
+  @CallSuper protected void disposeOnViewDetach(@NonNull final Disposable disposable) {
     if (disposables == null) {
       disposables = new CompositeDisposable();
     }
