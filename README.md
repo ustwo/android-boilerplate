@@ -18,7 +18,7 @@ This project consists of the following modules:
 ## Testing and CI
 
 ### Circle
-By default this boilerplate comes configured to run on [CircleCI](circleci.com). The YML file `circle.yml` will setup the dependencies, run the tests configured in `scripts/ci.sh` and export relevant reports and artefacts.
+By default this boilerplate comes configured to run on [CircleCI](https://circleci.com). The YML file `circle.yml` will setup the dependencies, run the tests configured in `scripts/ci.sh` and export relevant reports and artefacts.
 
 If you have configured the environment variables defined in the "Firebase cloud testing" the tests will be run on the [Firebase test lab](https://firebase.google.com/docs/test-lab/) otherwise your tests will be run on an emulator.
 
@@ -26,8 +26,8 @@ If you have configured the environment variables defined in the "Firebase cloud 
 This boilerplate ships with Firebase cloud testing built in. You simply need to enter the following environment variables to make it work:
 
 - `GCLOUD_SERVICE_ACCOUNT` - The service account email address is listed in the Firebase console here: https://console.firebase.google.com/project/<projectId>/settings/serviceaccounts/adminsdk
-- `GCLOUD_SERVICE_KEY` - This is an export of the contents of the JSON secret file that can be obtained by generating a new private key here: https://console.firebase.google.com/project/<projectId>/settings/serviceaccounts/adminsdk
-- `GCLOUD_PROJECT_ID` - This is a unique identifier for your Firebase project which can be found in this project's URL: https://console.firebase.google.com/project/<projectId>
+- `GCLOUD_SERVICE_KEY` - This is an export of the contents of the JSON secret file that can be obtained by generating a new private key here: `https://console.firebase.google.com/project/<projectId>/settings/serviceaccounts/adminsdk`
+- `GCLOUD_PROJECT_ID` - This is a unique identifier for your Firebase project which can be found in this project's URL: `https://console.firebase.google.com/project/<projectId>`
 
 The cloud testing setup by default will run your instrumentation tests, take screenshots and save the test report and artefacts.
 
