@@ -15,6 +15,20 @@ This project consists of the following modules:
 * [Android Studio](https://developer.android.com/studio/index.html), Provides the fastest tools for building apps on every type of Android device.
 * [Gradle](https://gradle.org/), An open source build automation system.
 
+## Testing and CI
+
+### Circle
+By default this boilerplate comes configured to run on [CircleCI](circleci.com). The YML file `circle.yml` will setup the dependencies, run the tests configured in `scripts/ci.sh` and export relevant reports and artefacts.
+
+If you have configured the environment variables defined in the "Firebase cloud testing" the tests will be run on the [Firebase test lab](https://firebase.google.com/docs/test-lab/) otherwise your tests will be run on an emulator.
+
+### Firebase cloud testing
+This boilerplate ships with Firebase cloud testing built in. You simply need to enter the following environment variables to make it work:
+
+- `GCLOUD_SERVICE_ACCOUNT` - The service account email address is listed in the Firebase console here: https://console.firebase.google.com/project/<projectId>/settings/serviceaccounts/adminsdk
+- `GCLOUD_SERVICE_KEY` - This is an export of the contents of the JSON secret file that can be obtained by generating a new private key here: https://console.firebase.google.com/project/<projectId>/settings/serviceaccounts/adminsdk
+- `GCLOUD_PROJECT_ID` - This is a unique identifier for your Firebase project which can be found in this project's URL: https://console.firebase.google.com/project/<projectId>
+
 ## Signing and secrets
 The repository contains two files responsible for secrets and signing; `ci-keys.cipher` and `release.keystore.cipher` respectivly. Both files have been encrypted using openssl aes-256-cbc with the key `ustwoopensource`. These files are intended solely as placeholders to allow you to make release builds and **need** to be replaced before releasing to the app store.
 
