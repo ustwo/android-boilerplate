@@ -34,6 +34,8 @@ The cloud testing setup by default will run your instrumentation tests, take scr
 ## Signing and secrets
 The repository contains two files responsible for secrets and signing; `ci-keys.cipher` and `release.keystore.cipher` respectivly. Both files have been encrypted using openssl aes-256-cbc with the key `ustwoopensource`. These files are intended solely as placeholders to allow you to make release builds and **need** to be replaced before releasing to the app store.
 
+The current secret management implementation is simple when you have a small number of secrets or files that need encrypting and / or a small team. If you are working on a large project where access to secrets and files should be more carefully managed then we recommend using [BlackBox](https://github.com/StackExchange/blackbox) by StackExchange.
+
 ### Editing secrets
 To add, view or edit secrets you first need to decrypt them using openssl:
 ```
