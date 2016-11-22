@@ -29,6 +29,8 @@ This boilerplate ships with Firebase cloud testing built in. You simply need to 
 - `GCLOUD_SERVICE_KEY` - This is an export of the contents of the JSON secret file that can be obtained by generating a new private key here: https://console.firebase.google.com/project/<projectId>/settings/serviceaccounts/adminsdk
 - `GCLOUD_PROJECT_ID` - This is a unique identifier for your Firebase project which can be found in this project's URL: https://console.firebase.google.com/project/<projectId>
 
+The cloud testing setup by default will run your instrumentation tests, take screenshots and save the test report and artefacts.
+
 ## Signing and secrets
 The repository contains two files responsible for secrets and signing; `ci-keys.cipher` and `release.keystore.cipher` respectivly. Both files have been encrypted using openssl aes-256-cbc with the key `ustwoopensource`. These files are intended solely as placeholders to allow you to make release builds and **need** to be replaced before releasing to the app store.
 
