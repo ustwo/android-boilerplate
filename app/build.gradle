@@ -73,7 +73,7 @@ dependencies {
     }
     androidTestAnnotationProcessor library.daggerCompiler
     androidTestCompile library.spoon
-    androidTestCompile (name:'cloudtestingscreenshotter_lib', ext:'aar')
+    androidTestCompile(name: 'cloudtestingscreenshotter_lib', ext: 'aar')
 }
 
 spoon {

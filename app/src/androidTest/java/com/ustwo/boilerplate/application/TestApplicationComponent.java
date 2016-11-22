@@ -1,12 +1,9 @@
 package com.ustwo.boilerplate.application;
 
+import dagger.Component;
 import javax.inject.Singleton;
 
-import dagger.Component;
-
 @Singleton
-@Component(modules = {
-    TestApplicationModule.class
-})
+@Component(modules = {TestApplicationModule.class})
 public interface TestApplicationComponent extends ApplicationComponent {
 }

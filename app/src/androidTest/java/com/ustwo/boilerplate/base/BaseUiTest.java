@@ -7,8 +7,8 @@ import com.squareup.spoon.Spoon;
 
 public class BaseUiTest {
 
-  protected final void screenshot(@NonNull final Activity activity, @NonNull final String
-      screenshotName) {
+  protected final void screenshot(@NonNull final Activity activity,
+      @NonNull final String screenshotName) {
     try {
       Spoon.screenshot(activity, screenshotName);
       ScreenShotter.takeScreenshot(screenshotName, activity);
