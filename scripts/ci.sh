@@ -2,7 +2,7 @@
 set -xe
 
 # Get the location for report directory from 1st param or use current directory
-if [ ! -z "$1" ] then
+if [ ! -z "$1" ]; then
     report_location=$1
 else
     report_location=`pwd`
