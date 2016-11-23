@@ -67,6 +67,10 @@ dependencies {
     provided library.autoValue
     annotationProcessor library.autoValue
 
+    debugCompile library.leakCanary
+    releaseCompile library.leakCanaryNoOp
+    testCompile library.leakCanaryNoOp
+
     compile library.rxJava
     compile library.rxLint
 

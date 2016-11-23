@@ -17,6 +17,8 @@ ext.versions = [
         espresso: '2.2.2',
         spoon: '1.7.0',
 
+        leakCanary: '1.5',
+
         retrolambdaGradlePlugin: '3.3.1',
         dexCountGradlePlugin: '0.6.1',
         spoonGradlePlugin: '1.2.2',
@@ -39,7 +41,10 @@ ext.library = [
         // Test dependencies
         jUnit: "junit:junit:$versions.jUnit",
         espressoCore: "com.android.support.test.espresso:espresso-core:$versions.espresso",
-        spoon: "com.squareup.spoon:spoon-client:$versions.spoon"
+        spoon: "com.squareup.spoon:spoon-client:$versions.spoon",
+
+        leakCanary: "com.squareup.leakcanary:leakcanary-android:$versions.leakCanary",
+        leakCanaryNoOp: "com.squareup.leakcanary:leakcanary-android-no-op:$versions.leakCanary",
 ]
 
 ext.plugin = [
