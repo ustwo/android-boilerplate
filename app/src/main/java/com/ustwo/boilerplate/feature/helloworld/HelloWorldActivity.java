@@ -13,20 +13,26 @@ public class HelloWorldActivity extends BaseActivity<HelloWorldPresenter.View>
 
   @Inject HelloWorldPresenter presenter;
 
-  @Override protected void onCreate(Bundle savedInstanceState) {
+  @Override
+  protected void onCreate(final Bundle savedInstanceState) {
     createComponentAndInject();
     super.onCreate(savedInstanceState);
   }
 
-  @Override protected int getLayoutId() {
+  @Override
+  protected int getLayoutId() {
     return R.layout.activity_hello_world;
   }
 
-  @NonNull @Override protected BasePresenter<HelloWorldPresenter.View> getPresenter() {
+  @NonNull
+  @Override
+  protected BasePresenter<HelloWorldPresenter.View> getPresenter() {
     return presenter;
   }
 
-  @NonNull @Override protected HelloWorldPresenter.View getPresenterView() {
+  @NonNull
+  @Override
+  protected HelloWorldPresenter.View getPresenterView() {
     return this;
   }
 

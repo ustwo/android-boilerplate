@@ -14,7 +14,8 @@ class ApplicationModule {
     this.application = application;
   }
 
-  @Provides Context provideContext() {
+  @Provides
+  Context provideContext() {
     return application;
   }
 }
