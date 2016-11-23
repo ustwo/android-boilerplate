@@ -1,0 +1,18 @@
+plugins.apply('checkstyle')
+
+checkstyle {
+    toolVersion = '7.2'
+}
+
+task checkstyle(type: Checkstyle) {
+    description 'Performs checks on code based on Google Java code style.'
+    configFile rootProject.file('config/checkstyle.xml')
+
+    ignoreFailures false
+    showViolations true
+
+    source 'src'
+    include '**/*.java'
+
+    classpath = files()
+}
