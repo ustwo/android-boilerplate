@@ -3,6 +3,8 @@ package com.ustwo.boilerplate.application;
 import android.app.Application;
 import com.facebook.stetho.Stetho;
 import com.squareup.leakcanary.LeakCanary;
+import com.ustwo.boilerplate.BuildConfig;
+import timber.log.Timber;
 
 public class BoilerplateApplication extends Application {
 
@@ -13,6 +15,7 @@ public class BoilerplateApplication extends Application {
     super.onCreate();
     initialiseLeakCanary();
     Stetho.initializeWithDefaults(this);
+    setupTimber();
   }
 
   protected ApplicationComponent createComponent() {
@@ -22,6 +25,12 @@ public class BoilerplateApplication extends Application {
 
   public ApplicationComponent getApplicationComponent() {
     return applicationComponent;
+  }
+
+  private void setupTimber() {
+    if (BuildConfig.DEBUG) {
+      Timber.plant(new Timber.DebugTree());
+    }
   }
 
   private void initialiseLeakCanary() {

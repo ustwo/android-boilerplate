@@ -21,6 +21,8 @@ ext.versions = [
 
         stetho: "1.4.1",
 
+        timber: "4.3.1",
+
         retrolambdaGradlePlugin: '3.3.1',
         dexCountGradlePlugin: '0.6.1',
         spoonGradlePlugin: '1.2.2',
@@ -48,7 +50,9 @@ ext.library = [
         leakCanary: "com.squareup.leakcanary:leakcanary-android:$versions.leakCanary",
         leakCanaryNoOp: "com.squareup.leakcanary:leakcanary-android-no-op:$versions.leakCanary",
 
-        stetho: "com.facebook.stetho:stetho:$versions.stetho"
+        stetho: "com.facebook.stetho:stetho:$versions.stetho",
+
+        timber: "com.jakewharton.timber:timber:$versions.timber"
 ]
 
 ext.plugin = [
