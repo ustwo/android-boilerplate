@@ -11,6 +11,8 @@ ext.versions = [
         rxJava: '2.0.0',
         rxLint: '1.0',
 
+        autoValue: '1.2',
+
         jUnit: '4.12',
         espresso: '2.2.2',
         spoon: '1.7.0',
@@ -31,6 +33,8 @@ ext.library = [
 
         rxJava: "io.reactivex.rxjava2:rxjava:$versions.rxJava",
         rxLint: "nl.littlerobots.rxlint:rxlint:$versions.rxLint",
+
+        autoValue: "com.google.auto.value:auto-value:$versions.autoValue",
 
         // Test dependencies
         jUnit: "junit:junit:$versions.jUnit",
