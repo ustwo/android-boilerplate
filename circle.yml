@@ -27,6 +27,8 @@ test:
     - scripts/ci.sh $CIRCLE_TEST_REPORTS
 
   post:
+    - mkdir $CIRCLE_TEST_REPORTS/checkstyle
+    - cp -r app/build/reports/checkstyle $CIRCLE_TEST_REPORTS/checkstyle
     - mkdir $CIRCLE_TEST_REPORTS/dexcount
     - cp -r app/build/outputs/dexcount/debugChart/* $CIRCLE_TEST_REPORTS/dexcount
     - mkdir $CIRCLE_TEST_REPORTS/lint
