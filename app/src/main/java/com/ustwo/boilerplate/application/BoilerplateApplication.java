@@ -1,6 +1,7 @@
 package com.ustwo.boilerplate.application;
 
 import android.app.Application;
+import com.facebook.stetho.Stetho;
 import com.squareup.leakcanary.LeakCanary;
 
 public class BoilerplateApplication extends Application {
@@ -11,6 +12,7 @@ public class BoilerplateApplication extends Application {
   public void onCreate() {
     super.onCreate();
     initialiseLeakCanary();
+    Stetho.initializeWithDefaults(this);
   }
 
   protected ApplicationComponent createComponent() {
