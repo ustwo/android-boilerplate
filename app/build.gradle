@@ -64,6 +64,9 @@ dependencies {
     compile library.dagger
     annotationProcessor library.daggerCompiler
 
+    provided library.autoValue
+    annotationProcessor library.autoValue
+
     compile library.rxJava
     compile library.rxLint
 
