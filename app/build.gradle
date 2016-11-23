@@ -8,6 +8,7 @@ apply plugin: 'findbugs'
 apply from: '../config/findbugs.gradle'
 apply from: '../config/pmd.gradle'
 apply from: '../config/jacoco.gradle'
+apply from: '../config/checkstyle.gradle'
 
 android {
     compileSdkVersion versions.androidCompileSdk
