@@ -71,6 +71,8 @@ dependencies {
     releaseCompile library.leakCanaryNoOp
     testCompile library.leakCanaryNoOp
 
+    compile library.stetho
+
     compile library.rxJava
     compile library.rxLint
 
