@@ -14,7 +14,8 @@ public class TestApplicationModule {
     this.application = application;
   }
 
-  @Provides Context provideContext() {
+  @Provides
+  Context provideContext() {
     return application;
   }
 }

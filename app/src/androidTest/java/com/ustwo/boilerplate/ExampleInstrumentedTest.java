@@ -15,9 +15,10 @@ import org.junit.runner.RunWith;
  */
 @RunWith(AndroidJUnit4.class)
 public class ExampleInstrumentedTest {
-  @Test public void useAppContext() throws Exception {
+  @Test
+  public void useAppContext() throws Exception {
     // Context of the app under test.
-    Context appContext = InstrumentationRegistry.getTargetContext();
+    final Context appContext = InstrumentationRegistry.getTargetContext();
 
     assertEquals("com.ustwo.boilerplate.debug", appContext.getPackageName());
   }
