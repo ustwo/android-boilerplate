@@ -9,6 +9,7 @@ else
 fi
 
 ./gradlew --no-daemon --info clean
+./gradlew --no-daemon --info checkstyle -PdisablePreDex
 ./gradlew --no-daemon --info build countDebugDexMethods -PdisablePreDex
 
 # If we have a service key for the GCloud Cli then use remote testing otherwise run local tests
