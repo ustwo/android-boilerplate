@@ -23,6 +23,8 @@ ext.versions = [
 
         timber: "4.3.1",
 
+        butterknife: "8.4.0",
+
         retrolambdaGradlePlugin: '3.3.1',
         dexCountGradlePlugin: '0.6.1',
         spoonGradlePlugin: '1.2.2',
@@ -52,7 +54,10 @@ ext.library = [
 
         stetho: "com.facebook.stetho:stetho:$versions.stetho",
 
-        timber: "com.jakewharton.timber:timber:$versions.timber"
+        timber: "com.jakewharton.timber:timber:$versions.timber",
+
+        butterknife: "com.jakewharton:butterknife:$versions.butterknife",
+        butterknifeCompiler: "com.jakewharton:butterknife-compiler:$versions.butterknife"
 ]
 
 ext.plugin = [

@@ -75,6 +75,9 @@ dependencies {
 
     compile library.timber
 
+    compile library.butterknife
+    annotationProcessor library.butterknifeCompiler
+
     compile library.rxJava
     compile library.rxLint
 
