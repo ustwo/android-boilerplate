@@ -73,6 +73,8 @@ dependencies {
 
     compile library.stetho
 
+    compile library.timber
+
     compile library.rxJava
     compile library.rxLint
 
