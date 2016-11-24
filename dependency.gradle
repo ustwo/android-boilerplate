@@ -32,6 +32,8 @@ ext.versions = [
         retrofit: "2.1.0",
         retrofitRxJavaAdapter: "1.0.0",
 
+        calligraphy: "2.2.0",
+
         retrolambdaGradlePlugin: '3.3.1',
         dexCountGradlePlugin: '0.6.1',
         spoonGradlePlugin: '1.2.2',
@@ -75,7 +77,9 @@ ext.library = [
 
         retrofit: "com.squareup.retrofit2:retrofit:$versions.retrofit",
         retrofitGsonConverter: "com.squareup.retrofit2:converter-gson:$versions.retrofit",
-        retrofitRxJavaAdapter: "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$versions.retrofit"
+        retrofitRxJavaAdapter: "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$versions.retrofit",
+
+        calligraphy: "uk.co.chrisjenx:calligraphy:$versions.calligraphy"
 ]
 
 ext.plugin = [
