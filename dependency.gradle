@@ -29,6 +29,9 @@ ext.versions = [
 
         mockito: "2.2.22",
 
+        retrofit: "2.1.0",
+        retrofitRxJavaAdapter: "1.0.0",
+
         retrolambdaGradlePlugin: '3.3.1',
         dexCountGradlePlugin: '0.6.1',
         spoonGradlePlugin: '1.2.2',
@@ -67,7 +70,11 @@ ext.library = [
 
         threeTenAndroid: "com.jakewharton.threetenabp:threetenabp:$versions.threeTenAndroid",
 
-        mockito: "org.mockito:mockito-core:$versions.mockito"
+        mockito: "org.mockito:mockito-core:$versions.mockito",
+
+        retrofit: "com.squareup.retrofit2:retrofit:$versions.retrofit",
+        retrofitGsonConverter: "com.squareup.retrofit2:converter-gson:$versions.retrofit",
+        retrofitRxJavaAdapter: "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$versions.retrofit"
 ]
 
 ext.plugin = [
