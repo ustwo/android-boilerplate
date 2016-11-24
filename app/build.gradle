@@ -4,6 +4,7 @@ apply plugin: 'com.getkeepsafe.dexcount'
 apply plugin: 'spoon'
 apply plugin: 'net.ltgt.errorprone'
 apply plugin: 'findbugs'
+apply plugin: 'hu.supercluster.paperwork'
 
 apply from: '../config/findbugs.gradle'
 apply from: '../config/pmd.gradle'
