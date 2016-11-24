@@ -25,6 +25,10 @@ ext.versions = [
 
         butterknife: "8.4.0",
 
+        threeTenAndroid: "1.0.4",
+
+        mockito: "2.2.22",
+
         retrolambdaGradlePlugin: '3.3.1',
         dexCountGradlePlugin: '0.6.1',
         spoonGradlePlugin: '1.2.2',
@@ -35,6 +39,8 @@ ext.versions = [
 ext.library = [
         // Android dependencies
         androidSupportAppCompat: "com.android.support:appcompat-v7:$versions.androidSupportLibrary",
+        androidSupportDesign: "com.android.support:design:$versions.androidSupportLibrary",
+        androidSupportRecyclerView: "com.android.support:recyclerview-v7:$versions.androidSupportLibrary",
 
         dagger: "com.google.dagger:dagger:$versions.dagger",
         daggerCompiler: "com.google.dagger:dagger-compiler:$versions.dagger",
@@ -57,7 +63,11 @@ ext.library = [
         timber: "com.jakewharton.timber:timber:$versions.timber",
 
         butterknife: "com.jakewharton:butterknife:$versions.butterknife",
-        butterknifeCompiler: "com.jakewharton:butterknife-compiler:$versions.butterknife"
+        butterknifeCompiler: "com.jakewharton:butterknife-compiler:$versions.butterknife",
+
+        threeTenAndroid: "com.jakewharton.threetenabp:threetenabp:$versions.threeTenAndroid",
+
+        mockito: "org.mockito:mockito-core:$versions.mockito"
 ]
 
 ext.plugin = [
