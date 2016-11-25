@@ -1,41 +1,34 @@
 ext.versions = [
+        // Android libs
         androidMinSdk: 19,
         androidTargetSdk: 24,
         androidCompileSdk: 24,
         androidBuildTools: '24.0.1',
         androidSupportLibrary: '24.2.0',
-        androidGradlePlugin: '2.2.1',
 
+        // App dependencies
         dagger: '2.7',
-
         rxJava: '2.0.0',
         rxLint: '1.0',
-
         autoValue: '1.2',
+        timber: "4.3.1",
+        butterknife: "8.4.0",
+        threeTenAndroid: "1.0.4",
+        retrofit: "2.1.0",
+        retrofitRxJavaAdapter: "1.0.0",
+        calligraphy: "2.2.0",
+        paperwork: "1.2.7",
 
+        // Testing / debug
         jUnit: '4.12',
         espresso: '2.2.2',
         spoon: '1.7.0',
-
         leakCanary: '1.5',
-
         stetho: "1.4.1",
-
-        timber: "4.3.1",
-
-        butterknife: "8.4.0",
-
-        threeTenAndroid: "1.0.4",
-
         mockito: "2.2.22",
 
-        retrofit: "2.1.0",
-        retrofitRxJavaAdapter: "1.0.0",
-
-        calligraphy: "2.2.0",
-
-        paperwork: "1.2.7",
-
+        // Gradle plugins
+        androidGradlePlugin: '2.2.1',
         retrolambdaGradlePlugin: '3.3.1',
         dexCountGradlePlugin: '0.6.1',
         spoonGradlePlugin: '1.2.2',
@@ -49,41 +42,31 @@ ext.library = [
         androidSupportDesign: "com.android.support:design:$versions.androidSupportLibrary",
         androidSupportRecyclerView: "com.android.support:recyclerview-v7:$versions.androidSupportLibrary",
 
+        // App dependencies
         dagger: "com.google.dagger:dagger:$versions.dagger",
         daggerCompiler: "com.google.dagger:dagger-compiler:$versions.dagger",
-
         rxJava: "io.reactivex.rxjava2:rxjava:$versions.rxJava",
         rxLint: "nl.littlerobots.rxlint:rxlint:$versions.rxLint",
-
         autoValue: "com.google.auto.value:auto-value:$versions.autoValue",
+        timber: "com.jakewharton.timber:timber:$versions.timber",
+        butterknife: "com.jakewharton:butterknife:$versions.butterknife",
+        butterknifeCompiler: "com.jakewharton:butterknife-compiler:$versions.butterknife",
+        threeTenAndroid: "com.jakewharton.threetenabp:threetenabp:$versions.threeTenAndroid",
+        retrofit: "com.squareup.retrofit2:retrofit:$versions.retrofit",
+        retrofitGsonConverter: "com.squareup.retrofit2:converter-gson:$versions.retrofit",
+        retrofitRxJavaAdapter: "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$versions.retrofit",
+        calligraphy: "uk.co.chrisjenx:calligraphy:$versions.calligraphy",
+        paperwork: "hu.supercluster:paperwork:$versions.paperwork",
 
-        // Test dependencies
+        // Testing / debug
         jUnit: "junit:junit:$versions.jUnit",
         espressoCore: "com.android.support.test.espresso:espresso-core:$versions.espresso",
         espressoContrib: "com.android.support.test.espresso:espresso-contrib:$versions.espresso",
         spoon: "com.squareup.spoon:spoon-client:$versions.spoon",
-
         leakCanary: "com.squareup.leakcanary:leakcanary-android:$versions.leakCanary",
         leakCanaryNoOp: "com.squareup.leakcanary:leakcanary-android-no-op:$versions.leakCanary",
-
         stetho: "com.facebook.stetho:stetho:$versions.stetho",
-
-        timber: "com.jakewharton.timber:timber:$versions.timber",
-
-        butterknife: "com.jakewharton:butterknife:$versions.butterknife",
-        butterknifeCompiler: "com.jakewharton:butterknife-compiler:$versions.butterknife",
-
-        threeTenAndroid: "com.jakewharton.threetenabp:threetenabp:$versions.threeTenAndroid",
-
-        mockito: "org.mockito:mockito-core:$versions.mockito",
-
-        retrofit: "com.squareup.retrofit2:retrofit:$versions.retrofit",
-        retrofitGsonConverter: "com.squareup.retrofit2:converter-gson:$versions.retrofit",
-        retrofitRxJavaAdapter: "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$versions.retrofit",
-
-        calligraphy: "uk.co.chrisjenx:calligraphy:$versions.calligraphy",
-
-        paperwork: "hu.supercluster:paperwork:$versions.paperwork"
+        mockito: "org.mockito:mockito-core:$versions.mockito"
 ]
 
 ext.plugin = [
