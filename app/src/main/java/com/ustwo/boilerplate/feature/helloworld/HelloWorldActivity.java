@@ -1,6 +1,5 @@
 package com.ustwo.boilerplate.feature.helloworld;
 
-import android.os.Bundle;
 import android.support.annotation.NonNull;
 import com.ustwo.boilerplate.R;
 import com.ustwo.boilerplate.base.BaseActivity;
@@ -11,11 +10,6 @@ public class HelloWorldActivity extends BaseActivity<HelloWorldPresenter.View, H
     implements HelloWorldPresenter.View {
 
   @Inject HelloWorldPresenter presenter;
-
-  @Override
-  protected void onCreate(final Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-  }
 
   @Override
   protected int getLayoutId() {
