@@ -8,7 +8,7 @@ import com.ustwo.boilerplate.base.BaseActivity;
 import com.ustwo.boilerplate.base.BasePresenter;
 import javax.inject.Inject;
 
-public class HelloWorldActivity extends BaseActivity<HelloWorldPresenter.View>
+public class HelloWorldActivity extends BaseActivity<HelloWorldPresenter.View, HelloWorldComponent>
     implements HelloWorldPresenter.View {
 
   @Inject HelloWorldPresenter presenter;
@@ -36,7 +36,8 @@ public class HelloWorldActivity extends BaseActivity<HelloWorldPresenter.View>
     return this;
   }
 
-  private HelloWorldComponent createComponentAndInject() {
+  @Override
+  protected HelloWorldComponent createComponentAndInject() {
     final HelloWorldComponent component = DaggerHelloWorldComponent.builder()
         .applicationComponent(((BoilerplateApplication) getApplication()).getApplicationComponent())
         .helloWorldModule(new HelloWorldModule()).build();
