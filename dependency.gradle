@@ -54,7 +54,7 @@ ext.library = [
         threeTenAndroid: "com.jakewharton.threetenabp:threetenabp:$versions.threeTenAndroid",
         retrofit: "com.squareup.retrofit2:retrofit:$versions.retrofit",
         retrofitGsonConverter: "com.squareup.retrofit2:converter-gson:$versions.retrofit",
-        retrofitRxJavaAdapter: "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$versions.retrofit",
+        retrofitRxJavaAdapter: "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$versions.retrofitRxJavaAdapter",
         calligraphy: "uk.co.chrisjenx:calligraphy:$versions.calligraphy",
         paperwork: "hu.supercluster:paperwork:$versions.paperwork",
 
