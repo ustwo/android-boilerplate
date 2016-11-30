@@ -3,7 +3,6 @@ package com.ustwo.boilerplate.feature.helloworld;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import com.ustwo.boilerplate.R;
-import com.ustwo.boilerplate.application.BoilerplateApplication;
 import com.ustwo.boilerplate.base.BaseActivity;
 import com.ustwo.boilerplate.base.BasePresenter;
 import javax.inject.Inject;
@@ -38,7 +37,7 @@ public class HelloWorldActivity extends BaseActivity<HelloWorldPresenter.View, H
   @Override
   protected HelloWorldComponent createComponentAndInject() {
     final HelloWorldComponent component = DaggerHelloWorldComponent.builder()
-        .applicationComponent(((BoilerplateApplication) getApplication()).getApplicationComponent())
+        .applicationComponent(getApplicationComponent())
         .helloWorldModule(new HelloWorldModule()).build();
     component.inject(this);
     return component;
