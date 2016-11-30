@@ -15,7 +15,6 @@ public class HelloWorldActivity extends BaseActivity<HelloWorldPresenter.View, H
 
   @Override
   protected void onCreate(final Bundle savedInstanceState) {
-    createComponentAndInject();
     super.onCreate(savedInstanceState);
   }
 
