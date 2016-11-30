@@ -12,6 +12,7 @@ public abstract class BaseActivity<V extends BaseView, C extends BaseComponent>
   @Override
   protected void onCreate(@Nullable final Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+    createComponentAndInject();
     setContentView(getLayoutId());
     getPresenter().onViewAttached(getPresenterView());
   }
