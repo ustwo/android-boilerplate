@@ -9,6 +9,7 @@ ext.versions = [
         // App dependencies
         dagger: '2.7',
         rxJava: '2.0.0',
+        rxAndroid: '2.0.0',
         rxLint: '1.0',
         autoValue: '1.2',
         timber: "4.3.1",
@@ -46,6 +47,7 @@ ext.library = [
         dagger: "com.google.dagger:dagger:$versions.dagger",
         daggerCompiler: "com.google.dagger:dagger-compiler:$versions.dagger",
         rxJava: "io.reactivex.rxjava2:rxjava:$versions.rxJava",
+        rxAndroid: "io.reactivex.rxjava2:rxandroid:$versions.rxAndroid",
         rxLint: "nl.littlerobots.rxlint:rxlint:$versions.rxLint",
         autoValue: "com.google.auto.value:auto-value:$versions.autoValue",
         timber: "com.jakewharton.timber:timber:$versions.timber",
