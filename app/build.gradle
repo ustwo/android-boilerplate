@@ -80,6 +80,7 @@ dependencies {
     annotationProcessor library.butterknifeCompiler
 
     compile library.rxJava
+    compile library.rxAndroid
     compile library.rxLint
 
     testCompile library.jUnit
