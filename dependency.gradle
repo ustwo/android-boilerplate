@@ -8,8 +8,8 @@ ext.versions = [
 
         // App dependencies
         dagger: '2.7',
-        rxJava: '2.0.0',
-        rxAndroid: '2.0.0',
+        rxJava: '2.0.1',
+        rxAndroid: '2.0.1',
         rxLint: '1.0',
         autoValue: '1.2',
         timber: "4.3.1",
