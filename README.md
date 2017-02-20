@@ -1,7 +1,10 @@
 # Android Boilerplate
+<img src="https://raw.githubusercontent.com/SachseInTheHub/android-boilerplate/develop/android-ustwo.png" width="400">
+
 [![License Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-green.svg)](https://github.com/ustwo/android-boilerplate/blob/master/LICENSE.md)
 [![ustwo twitter](https://img.shields.io/badge/twitter-@ustwo-blue.svg)](http://twitter.com/ustwo)
 [![Platform Android](https://img.shields.io/badge/platform-Android-blue.svg)](https://www.android.com)
+
 
 ## Description
 Android boilerplate project to use as a reference when starting new Android projects. It provides basic architecture, tools and guidelines that we use when developing Android apps.
