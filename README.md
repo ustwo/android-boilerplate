@@ -57,6 +57,14 @@ The same process can be used with `release.keystore.cipher` when you need to rep
 ### CI setup
 For the secrets and keystore to be used by your CI server you will need to export the environment variable `CI_SECRETS_KEY` with the default key listed above or your own if you've re-encrypted the secrets and keystore yourself. You will also need to ensure that openssl is added as a dependency / installed by default.
 
+## Code Standards
+[Code of Conduct](.github/CODE_OF_CONDUCT.md)
+
+## Contributing
+Please, take some time before starting a contribution to read our documentation
+* [Contributing guidelines](.github/CONTRIBUTING.md)
+* [Pull Request Template](.github/PULL_REQUEST_TEMPLATE.md) 
+
 ## Updating gitignore
 The gitignore file is generated using [GitIgnore.io](https://gitignore.io) and using [Android and Intellij](https://www.gitignore.io/api/android,intellij) for the selected technologies. This allows for easy updating when tools are updated or otherwise when required.
 
