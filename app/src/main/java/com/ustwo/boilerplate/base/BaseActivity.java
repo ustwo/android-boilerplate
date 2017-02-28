@@ -16,6 +16,7 @@ public abstract class BaseActivity<V extends BaseView, C extends BaseComponent>
     super.onCreate(savedInstanceState);
     createComponentAndInject();
     setContentView(getLayoutId());
+    onInitialize();
     getPresenter().onViewAttached(getPresenterView());
   }
 
@@ -39,4 +40,11 @@ public abstract class BaseActivity<V extends BaseView, C extends BaseComponent>
   protected abstract V getPresenterView();
 
   protected abstract C createComponentAndInject();
+
+  /**
+   * Perform remaining Activity initialization.
+   * {@link BasePresenter#onViewAttached(BaseView)} will be called next.
+   */
+  protected void onInitialize() {
+  }
 }
