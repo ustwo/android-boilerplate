@@ -6,7 +6,7 @@ import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 
 public class BasePresenter<T extends BaseView> {
-  private CompositeDisposable disposables;
+  private final CompositeDisposable disposables = new CompositeDisposable();
   private T view;
 
   protected BasePresenter() {
@@ -20,7 +20,7 @@ public class BasePresenter<T extends BaseView> {
    */
   @CallSuper
   public void onViewAttached(@NonNull final T view) {
-    if (this.view != null) {
+    if (isViewAttached()) {
       throw new IllegalStateException(
           "View " + this.view + " is already attached. Cannot attach " + view);
     }
@@ -33,15 +33,12 @@ public class BasePresenter<T extends BaseView> {
    */
   @CallSuper
   public void onViewDetached() {
-    if (view == null) {
+    if (!isViewAttached()) {
       throw new IllegalStateException("View is already detached");
     }
     view = null;
 
-    if (disposables != null) {
-      disposables.dispose();
-      disposables = null;
-    }
+    disposables.clear();
   }
 
   /**
@@ -51,9 +48,6 @@ public class BasePresenter<T extends BaseView> {
    */
   @CallSuper
   protected void disposeOnViewDetach(@NonNull final Disposable disposable) {
-    if (disposables == null) {
-      disposables = new CompositeDisposable();
-    }
     disposables.add(disposable);
   }
 
