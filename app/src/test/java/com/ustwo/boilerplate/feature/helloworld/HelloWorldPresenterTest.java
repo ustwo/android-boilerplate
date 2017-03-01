@@ -11,7 +11,7 @@ import org.mockito.junit.MockitoJUnitRunner;
 @RunWith(MockitoJUnitRunner.class)
 public class HelloWorldPresenterTest {
 
-  @Mock HelloWorldPresenter.View view;
+  @Mock private HelloWorldPresenter.View view;
 
   private HelloWorldPresenter presenter;
 
