@@ -84,6 +84,7 @@ dependencies {
     compile library.rxLint
 
     testCompile library.jUnit
+    testCompile library.mockito
 
     androidTestCompile(library.espressoCore) {
         exclude group: 'com.android.support', module: 'support-annotations'
