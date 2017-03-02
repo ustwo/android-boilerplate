@@ -29,7 +29,7 @@ ext.versions = [
         mockito: "2.2.22",
 
         // Gradle plugins
-        androidGradlePlugin: '2.2.1',
+        androidGradlePlugin: '2.2.3',
         retrolambdaGradlePlugin: '3.3.1',
         dexCountGradlePlugin: '0.6.1',
         spoonGradlePlugin: '1.2.2',
