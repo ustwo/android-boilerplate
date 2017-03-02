@@ -1,10 +1,6 @@
 package com.ustwo.boilerplate.feature.helloworld;
 
 import android.support.annotation.NonNull;
-import android.view.View;
-import android.widget.TextView;
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import com.ustwo.boilerplate.R;
 import com.ustwo.boilerplate.base.BaseActivity;
 import com.ustwo.boilerplate.base.BasePresenter;
@@ -14,12 +10,6 @@ public class HelloWorldActivity extends BaseActivity<HelloWorldPresenter.View, H
     implements HelloWorldPresenter.View {
 
   @Inject HelloWorldPresenter presenter;
-  @BindView(R.id.textView_helloWorld) TextView helloWorldView;
-
-  @Override
-  protected void onInitialize() {
-    ButterKnife.bind(this);
-  }
 
   @Override
   protected int getLayoutId() {
@@ -45,10 +35,5 @@ public class HelloWorldActivity extends BaseActivity<HelloWorldPresenter.View, H
         .helloWorldModule(new HelloWorldModule()).build();
     component.inject(this);
     return component;
-  }
-
-  @Override
-  public void showHello() {
-    helloWorldView.setVisibility(View.VISIBLE);
   }
 }
