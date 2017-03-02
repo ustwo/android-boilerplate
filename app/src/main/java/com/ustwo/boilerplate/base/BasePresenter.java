@@ -30,7 +30,6 @@ public class BasePresenter<T extends BaseView> {
 
   /**
    * On view will show. Called when your view is about to be seen on the screen.
-   * @param view
    */
   @CallSuper
   public void onViewWillShow(@NonNull final T view) {
