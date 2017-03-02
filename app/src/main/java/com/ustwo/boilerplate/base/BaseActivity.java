@@ -21,6 +21,18 @@ public abstract class BaseActivity<V extends BaseView, C extends BaseComponent>
   }
 
   @Override
+  protected void onResume() {
+    getPresenter().onViewWillShow(getPresenterView());
+    super.onResume();
+  }
+
+  @Override
+  protected void onPause() {
+    getPresenter().onViewWillHide();
+    super.onPause();
+  }
+
+  @Override
   protected void onDestroy() {
     getPresenter().onViewDetached();
     super.onDestroy();
