@@ -6,7 +6,8 @@ import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 
 public class BasePresenter<T extends BaseView> {
-  private final CompositeDisposable disposables = new CompositeDisposable();
+  private final CompositeDisposable attachedDisposables = new CompositeDisposable();
+  private final CompositeDisposable visibleDisposables = new CompositeDisposable();
   private T view;
 
   protected BasePresenter() {
@@ -28,6 +29,23 @@ public class BasePresenter<T extends BaseView> {
   }
 
   /**
+   * On view will show. Called when your view is about to be seen on the screen.
+   * @param view
+   */
+  @CallSuper
+  public void onViewWillShow(@NonNull final T view) {
+
+  }
+
+  /**
+   * On view will hide. Called when your view is about to hide from the screen.
+   */
+  @CallSuper
+  public void onViewWillHide() {
+    visibleDisposables.clear();
+  }
+
+  /**
    * On view detached. Intended as a cleanup process that should be called when the view will no
    * longer be in use.
    */
@@ -38,17 +56,17 @@ public class BasePresenter<T extends BaseView> {
     }
     view = null;
 
-    disposables.clear();
+    attachedDisposables.clear();
   }
 
   /**
-   * Dispose on view detach.
+   * Dispose on view will hide.
    *
-   * @param disposable Disposable to be disposed of upon view detachment
+   * @param disposable Disposable to be disposed of upon view will hide
    */
   @CallSuper
-  protected void disposeOnViewDetach(@NonNull final Disposable disposable) {
-    disposables.add(disposable);
+  protected void disposeOnViewWillHide(@NonNull final Disposable disposable) {
+    visibleDisposables.add(disposable);
   }
 
   public boolean isViewAttached() {
