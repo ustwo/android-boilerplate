@@ -68,6 +68,16 @@ public class BasePresenter<T extends BaseView> {
         visibleDisposables.add(disposable);
     }
 
+    /**
+     * Dispose on view detach.
+     *
+     * @param disposable Disposable to be disposed of upon view detachment
+     */
+    @CallSuper
+    protected void disposeOnViewDetach(@NonNull final Disposable disposable) {
+        attachedDisposables.add(disposable);
+    }
+
     public boolean isViewAttached() {
         return view != null;
     }
