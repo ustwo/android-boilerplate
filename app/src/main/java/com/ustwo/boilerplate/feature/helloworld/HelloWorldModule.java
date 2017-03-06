@@ -6,9 +6,9 @@ import dagger.Provides;
 @Module
 class HelloWorldModule {
 
-  @HelloWorldScope
-  @Provides
-  HelloWorldPresenter provideHelloWorldPresenter() {
-    return new HelloWorldPresenter();
-  }
+    @HelloWorldScope
+    @Provides
+    HelloWorldPresenter provideHelloWorldPresenter() {
+        return new HelloWorldPresenter();
+    }
 }

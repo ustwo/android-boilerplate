@@ -7,5 +7,5 @@ import dagger.Component;
 @HelloWorldScope
 @Component(dependencies = ApplicationComponent.class, modules = HelloWorldModule.class)
 interface HelloWorldComponent extends BaseComponent {
-  void inject(HelloWorldActivity activity);
+    void inject(HelloWorldActivity activity);
 }

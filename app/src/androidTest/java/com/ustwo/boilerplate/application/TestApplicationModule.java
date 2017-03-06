@@ -8,14 +8,14 @@ import dagger.Provides;
 
 @Module
 public class TestApplicationModule {
-  private final Application application;
+    private final Application application;
 
-  TestApplicationModule(@NonNull final Application application) {
-    this.application = application;
-  }
+    TestApplicationModule(@NonNull final Application application) {
+        this.application = application;
+    }
 
-  @Provides
-  Context provideContext() {
-    return application;
-  }
+    @Provides
+    Context provideContext() {
+        return application;
+    }
 }

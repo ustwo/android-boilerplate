@@ -8,5 +8,5 @@ import javax.inject.Singleton;
 @Singleton
 @Component(modules = {ApplicationModule.class})
 public interface ApplicationComponent extends BaseComponent {
-  Context getContext();
+    Context getContext();
 }
