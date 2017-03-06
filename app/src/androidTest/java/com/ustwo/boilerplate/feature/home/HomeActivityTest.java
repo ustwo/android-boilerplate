@@ -1,4 +1,4 @@
-package com.ustwo.boilerplate.feature.helloworld;
+package com.ustwo.boilerplate.feature.home;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
@@ -13,16 +13,16 @@ import com.ustwo.boilerplate.base.BaseUiTest;
 import org.junit.Rule;
 import org.junit.Test;
 
-public class HelloWorldActivityTest extends BaseUiTest {
+public class HomeActivityTest extends BaseUiTest {
 
-    @Rule public ActivityTestRule<HelloWorldActivity> activityTestRule =
-            new ActivityTestRule<>(HelloWorldActivity.class, true, true);
+    @Rule public ActivityTestRule<HomeActivity> activityTestRule =
+            new ActivityTestRule<>(HomeActivity.class, true, true);
 
     @Test
-    public void helloWorld_textShown() {
-        onView(withId(R.id.textView_helloWorld))
-                .check(matches(allOf(withText(R.string.hello_world), isDisplayed())));
+    public void home_appNameShown() {
+        onView(withId(R.id.textView_appName))
+                .check(matches(allOf(withText(R.string.app_name), isDisplayed())));
 
-        screenshot(activityTestRule.getActivity(), "hello_world_text_displayed");
+        screenshot(activityTestRule.getActivity(), "app_name_displayed");
     }
 }
