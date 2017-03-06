@@ -15,14 +15,14 @@ import org.junit.Test;
 
 public class HelloWorldActivityTest extends BaseUiTest {
 
-  @Rule public ActivityTestRule<HelloWorldActivity> activityTestRule =
-      new ActivityTestRule<>(HelloWorldActivity.class, true, true);
+    @Rule public ActivityTestRule<HelloWorldActivity> activityTestRule =
+            new ActivityTestRule<>(HelloWorldActivity.class, true, true);
 
-  @Test
-  public void helloWorld_textShown() {
-    onView(withId(R.id.textView_helloWorld))
-        .check(matches(allOf(withText(R.string.hello_world), isDisplayed())));
+    @Test
+    public void helloWorld_textShown() {
+        onView(withId(R.id.textView_helloWorld))
+                .check(matches(allOf(withText(R.string.hello_world), isDisplayed())));
 
-    screenshot(activityTestRule.getActivity(), "hello_world_text_displayed");
-  }
+        screenshot(activityTestRule.getActivity(), "hello_world_text_displayed");
+    }
 }

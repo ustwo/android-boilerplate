@@ -5,6 +5,6 @@ import com.ustwo.boilerplate.base.BaseView;
 
 class HelloWorldPresenter extends BasePresenter<HelloWorldPresenter.View> {
 
-  interface View extends BaseView {
-  }
+    interface View extends BaseView {
+    }
 }
