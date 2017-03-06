@@ -7,7 +7,6 @@ import io.reactivex.disposables.Disposable;
 
 public class BasePresenter<T extends BaseView> {
     private final CompositeDisposable attachedDisposables = new CompositeDisposable();
-    private final CompositeDisposable visibleDisposables = new CompositeDisposable();
     private T view;
 
     protected BasePresenter() {
@@ -41,7 +40,6 @@ public class BasePresenter<T extends BaseView> {
      */
     @CallSuper
     public void onViewWillHide() {
-        visibleDisposables.clear();
     }
 
     /**
@@ -56,16 +54,6 @@ public class BasePresenter<T extends BaseView> {
         view = null;
 
         attachedDisposables.clear();
-    }
-
-    /**
-     * Dispose on view will hide.
-     *
-     * @param disposable Disposable to be disposed of upon view will hide
-     */
-    @CallSuper
-    protected void disposeOnViewWillHide(@NonNull final Disposable disposable) {
-        visibleDisposables.add(disposable);
     }
 
     /**
