@@ -5,17 +5,18 @@ import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import butterknife.ButterKnife;
 import com.ustwo.boilerplate.application.ApplicationComponent;
 import com.ustwo.boilerplate.application.BoilerplateApplication;
 
-public abstract class BaseActivity<V extends BaseView, C extends BaseComponent>
-        extends AppCompatActivity {
+public abstract class BaseActivity<V extends BaseView> extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        createComponentAndInject();
         setContentView(getLayoutId());
+        ButterKnife.bind(this);
+        onInject();
         onInitialize();
         getPresenter().onViewAttached(getPresenterView());
     }
@@ -38,9 +39,18 @@ public abstract class BaseActivity<V extends BaseView, C extends BaseComponent>
         super.onDestroy();
     }
 
+    /**
+     * Perform remaining Activity initialization. {@link BasePresenter#onViewAttached(BaseView)}
+     * will be called next.
+     */
+    protected void onInitialize() {
+    }
+
     protected ApplicationComponent getApplicationComponent() {
         return ((BoilerplateApplication) getApplication()).getApplicationComponent();
     }
+
+    protected abstract void onInject();
 
     @LayoutRes
     protected abstract int getLayoutId();
@@ -50,13 +60,4 @@ public abstract class BaseActivity<V extends BaseView, C extends BaseComponent>
 
     @NonNull
     protected abstract V getPresenterView();
-
-    protected abstract C createComponentAndInject();
-
-    /**
-     * Perform remaining Activity initialization. {@link BasePresenter#onViewAttached(BaseView)}
-     * will be called next.
-     */
-    protected void onInitialize() {
-    }
 }
