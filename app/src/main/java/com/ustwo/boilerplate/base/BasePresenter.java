@@ -5,14 +5,10 @@ import android.support.annotation.NonNull;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 
-public class BasePresenter<T extends BaseView> {
+public abstract class BasePresenter<T> {
     private final CompositeDisposable attachedDisposables = new CompositeDisposable();
     private final CompositeDisposable visibleDisposables = new CompositeDisposable();
     private T view;
-
-    protected BasePresenter() {
-        // This class is designed for extension
-    }
 
     /**
      * On view attached. To be called when your view is initialised.

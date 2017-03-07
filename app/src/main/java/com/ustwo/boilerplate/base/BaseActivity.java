@@ -9,7 +9,7 @@ import butterknife.ButterKnife;
 import com.ustwo.boilerplate.application.ApplicationComponent;
 import com.ustwo.boilerplate.application.BoilerplateApplication;
 
-public abstract class BaseActivity<V extends BaseView> extends AppCompatActivity {
+public abstract class BaseActivity<T> extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable final Bundle savedInstanceState) {
@@ -40,7 +40,7 @@ public abstract class BaseActivity<V extends BaseView> extends AppCompatActivity
     }
 
     /**
-     * Perform remaining Activity initialization. {@link BasePresenter#onViewAttached(BaseView)}
+     * Perform remaining Activity initialization. {@link BasePresenter#onViewAttached(T)}
      * will be called next.
      */
     protected void onInitialize() {
@@ -56,8 +56,8 @@ public abstract class BaseActivity<V extends BaseView> extends AppCompatActivity
     protected abstract int getLayoutId();
 
     @NonNull
-    protected abstract BasePresenter<V> getPresenter();
+    protected abstract BasePresenter<T> getPresenter();
 
     @NonNull
-    protected abstract V getPresenterView();
+    protected abstract T getPresenterView();
 }
