@@ -1,7 +1,6 @@
 package com.ustwo.boilerplate.feature.home;
 
 import com.ustwo.boilerplate.base.BasePresenter;
-import com.ustwo.boilerplate.base.BaseView;
 import com.ustwo.boilerplate.base.PerViewScope;
 import javax.inject.Inject;
 
@@ -12,6 +11,6 @@ class HomePresenter extends BasePresenter<HomePresenter.View> {
     HomePresenter() {
     }
 
-    interface View extends BaseView {
+    interface View {
     }
 }
