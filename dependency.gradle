@@ -4,23 +4,23 @@ ext.versions = [
         androidTargetSdk: 24,
         androidCompileSdk: 24,
         androidBuildTools: '24.0.1',
-        androidSupportLibrary: '24.2.0',
+        androidSupportLibrary: '25.2.0',
 
         // App dependencies
         dagger: '2.7',
         rxJava: '2.0.1',
         rxAndroid: '2.0.1',
-        rxLint: '1.0',
-        timber: "4.3.1",
-        butterknife: "8.4.0",
+        rxLint: '1.2',
+        timber: "4.5.1",
+        butterknife: "8.5.1",
         paperwork: "1.2.7",
 
         // Testing / debug
         jUnit: '4.12',
         espresso: '2.2.2',
-        spoon: '1.7.0',
+        spoon: '1.7.1',
         leakCanary: '1.5',
-        stetho: "1.4.1",
+        stetho: "1.4.2",
         mockito: "2.2.22",
 
         // Gradle plugins
