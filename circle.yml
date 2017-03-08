@@ -1,8 +1,8 @@
 machine:
   environment:
     ANDROID_HOME: /usr/local/android-sdk-linux
-    ANDROID_BUILD_TOOLS: 24.0.1
-    ANDROID_PLATFORM: 24
+    ANDROID_BUILD_TOOLS: 25.0.2
+    ANDROID_PLATFORM: 25
 
 dependencies:
   pre:

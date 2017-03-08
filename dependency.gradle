@@ -1,9 +1,9 @@
 ext.versions = [
         // Android libs
         androidMinSdk: 19,
-        androidTargetSdk: 24,
-        androidCompileSdk: 24,
-        androidBuildTools: '24.0.1',
+        androidTargetSdk: 25,
+        androidCompileSdk: 25,
+        androidBuildTools: '25.0.2',
         androidSupportLibrary: '25.2.0',
 
         // App dependencies
