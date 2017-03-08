@@ -29,7 +29,8 @@ ext.versions = [
         dexCountGradlePlugin: '0.6.1',
         spoonGradlePlugin: '1.2.2',
         errorProneGradlePlugin: '0.0.8',
-        jacocoGradlePlugin: '0.7.7.201606060606'
+        jacocoGradlePlugin: '0.7.7.201606060606',
+        gradleVersions: '0.14.0'
 ]
 
 ext.library = [
@@ -65,5 +66,6 @@ ext.plugin = [
         errorProne: "net.ltgt.gradle:gradle-errorprone-plugin:$versions.errorProneGradlePlugin",
         dexCount: "com.getkeepsafe.dexcount:dexcount-gradle-plugin:$versions.dexCountGradlePlugin",
         jacoco: "org.jacoco:org.jacoco.core:$versions.jacocoGradlePlugin",
-        paperwork: "hu.supercluster:paperwork-plugin:$versions.paperwork"
+        paperwork: "hu.supercluster:paperwork-plugin:$versions.paperwork",
+        gradleVersions: "com.github.ben-manes:gradle-versions-plugin:$versions.gradleVersions"
 ]

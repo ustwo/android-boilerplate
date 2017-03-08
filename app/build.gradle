@@ -5,6 +5,7 @@ apply plugin: 'spoon'
 apply plugin: 'net.ltgt.errorprone'
 apply plugin: 'findbugs'
 apply plugin: 'hu.supercluster.paperwork'
+apply plugin: 'com.github.ben-manes.versions'
 
 apply from: '../config/findbugs.gradle'
 apply from: '../config/pmd.gradle'
