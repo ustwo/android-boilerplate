@@ -11,13 +11,8 @@ ext.versions = [
         rxJava: '2.0.1',
         rxAndroid: '2.0.1',
         rxLint: '1.0',
-        autoValue: '1.2',
         timber: "4.3.1",
         butterknife: "8.4.0",
-        threeTenAndroid: "1.0.4",
-        retrofit: "2.1.0",
-        retrofitRxJavaAdapter: "1.0.0",
-        calligraphy: "2.2.0",
         paperwork: "1.2.7",
 
         // Testing / debug
@@ -40,8 +35,6 @@ ext.versions = [
 ext.library = [
         // Android dependencies
         androidSupportAppCompat: "com.android.support:appcompat-v7:$versions.androidSupportLibrary",
-        androidSupportDesign: "com.android.support:design:$versions.androidSupportLibrary",
-        androidSupportRecyclerView: "com.android.support:recyclerview-v7:$versions.androidSupportLibrary",
 
         // App dependencies
         dagger: "com.google.dagger:dagger:$versions.dagger",
@@ -49,15 +42,9 @@ ext.library = [
         rxJava: "io.reactivex.rxjava2:rxjava:$versions.rxJava",
         rxAndroid: "io.reactivex.rxjava2:rxandroid:$versions.rxAndroid",
         rxLint: "nl.littlerobots.rxlint:rxlint:$versions.rxLint",
-        autoValue: "com.google.auto.value:auto-value:$versions.autoValue",
         timber: "com.jakewharton.timber:timber:$versions.timber",
         butterknife: "com.jakewharton:butterknife:$versions.butterknife",
         butterknifeCompiler: "com.jakewharton:butterknife-compiler:$versions.butterknife",
-        threeTenAndroid: "com.jakewharton.threetenabp:threetenabp:$versions.threeTenAndroid",
-        retrofit: "com.squareup.retrofit2:retrofit:$versions.retrofit",
-        retrofitGsonConverter: "com.squareup.retrofit2:converter-gson:$versions.retrofit",
-        retrofitRxJavaAdapter: "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$versions.retrofitRxJavaAdapter",
-        calligraphy: "uk.co.chrisjenx:calligraphy:$versions.calligraphy",
         paperwork: "hu.supercluster:paperwork:$versions.paperwork",
 
         // Testing / debug
