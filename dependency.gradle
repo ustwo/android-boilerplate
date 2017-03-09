@@ -11,17 +11,17 @@ ext.versions = [
         rxJava: '2.0.1',
         rxAndroid: '2.0.1',
         rxLint: '1.2',
-        timber: "4.5.1",
-        butterknife: "8.5.1",
-        paperwork: "1.2.7",
+        timber: '4.5.1',
+        butterknife: '8.5.1',
+        paperwork: '1.2.7',
 
         // Testing / debug
         jUnit: '4.12',
         espresso: '2.2.2',
         spoon: '1.7.1',
         leakCanary: '1.5',
-        stetho: "1.4.2",
-        mockito: "2.2.22",
+        stetho: '1.4.2',
+        mockito: '2.2.22',
 
         // Gradle plugins
         androidGradlePlugin: '2.2.3',
