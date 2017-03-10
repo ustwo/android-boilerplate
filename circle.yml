@@ -46,8 +46,8 @@ test:
     - cp -r app/build/outputs/dexcount/debugChart/* $CIRCLE_TEST_REPORTS/dexcount
     # lint
     - mkdir $CIRCLE_TEST_REPORTS/lint
-    - find app/build/reports -depth 1 -name \*.html -exec cp {} $CIRCLE_TEST_REPORTS/lint \;
-    - find app/build/reports -depth 1 -name \*.xml -exec cp {} $CIRCLE_TEST_REPORTS/lint \;
+    - find app/build/reports -name \*.html -depth 1 -exec cp {} $CIRCLE_TEST_REPORTS/lint \;
+    - find app/build/reports -name \*.xml -depth 1 -exec cp {} $CIRCLE_TEST_REPORTS/lint \;
     # unit tests
     - mkdir $CIRCLE_TEST_REPORTS/unitTests
     - cp -r app/build/reports/tests $CIRCLE_TEST_REPORTS/unitTests
