@@ -34,9 +34,11 @@ test:
     - mkdir $CIRCLE_TEST_REPORTS/dexcount
     - cp -r app/build/outputs/dexcount/debugChart/* $CIRCLE_TEST_REPORTS/dexcount
     - mkdir $CIRCLE_TEST_REPORTS/lint
-    - cp app/build/outputs/lint-results-debug.html $CIRCLE_TEST_REPORTS/lint
-    - mkdir $CIRCLE_TEST_REPORTS/test
-    - cp -r app/build/reports/tests/debug $CIRCLE_TEST_REPORTS/test
+    - cp app/build/outputs/*.html $CIRCLE_TEST_REPORTS/lint
+    - cp app/build/outputs/*.xml $CIRCLE_TEST_REPORTS/lint
+    - mkdir $CIRCLE_TEST_REPORTS/unitTests
+    - cp -r app/build/reports/tests $CIRCLE_TEST_REPORTS/unitTests
     - mkdir $CIRCLE_TEST_REPORTS/jacoco
     - cp -r app/build/reports/jacoco/testDebugUnitTestCoverage/html $CIRCLE_TEST_REPORTS/jacoco
+    - cp -r app/build/reports/jacoco/testReleaseUnitTestCoverage/html $CIRCLE_TEST_REPORTS/jacoco
     - cp app/build/outputs/apk/app-release.apk $CIRCLE_ARTIFACTS
