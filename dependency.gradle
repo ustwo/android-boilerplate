@@ -21,16 +21,7 @@ ext.versions = [
         spoon: '1.7.1',
         leakCanary: '1.5',
         stetho: '1.4.2',
-        mockito: '2.2.22',
-
-        // Gradle plugins
-        androidGradlePlugin: '2.3.0',
-        retrolambdaGradlePlugin: '3.3.1',
-        dexCountGradlePlugin: '0.6.1',
-        spoonGradlePlugin: '1.2.2',
-        errorProneGradlePlugin: '0.0.8',
-        jacocoGradlePlugin: '0.7.7.201606060606',
-        gradleVersions: '0.14.0'
+        mockito: '2.2.22'
 ]
 
 ext.library = [
@@ -57,15 +48,4 @@ ext.library = [
         leakCanaryNoOp: "com.squareup.leakcanary:leakcanary-android-no-op:$versions.leakCanary",
         stetho: "com.facebook.stetho:stetho:$versions.stetho",
         mockito: "org.mockito:mockito-core:$versions.mockito"
-]
-
-ext.plugin = [
-        android: "com.android.tools.build:gradle:$versions.androidGradlePlugin",
-        retrolambda: "me.tatarka:gradle-retrolambda:$versions.retrolambdaGradlePlugin",
-        spoon: "com.stanfy.spoon:spoon-gradle-plugin:$versions.spoonGradlePlugin",
-        errorProne: "net.ltgt.gradle:gradle-errorprone-plugin:$versions.errorProneGradlePlugin",
-        dexCount: "com.getkeepsafe.dexcount:dexcount-gradle-plugin:$versions.dexCountGradlePlugin",
-        jacoco: "org.jacoco:org.jacoco.core:$versions.jacocoGradlePlugin",
-        paperwork: "hu.supercluster:paperwork-plugin:$versions.paperwork",
-        gradleVersions: "com.github.ben-manes:gradle-versions-plugin:$versions.gradleVersions"
 ]

@@ -11,14 +11,14 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath plugin.android
-        classpath plugin.retrolambda
-        classpath plugin.spoon
-        classpath plugin.errorProne
-        classpath plugin.dexCount
-        classpath plugin.jacoco
-        classpath plugin.paperwork
-        classpath plugin.gradleVersions
+        classpath 'com.android.tools.build:gradle:2.3.0'
+        classpath 'me.tatarka:gradle-retrolambda:3.3.1'
+        classpath 'com.stanfy.spoon:spoon-gradle-plugin:1.2.2'
+        classpath 'net.ltgt.gradle:gradle-errorprone-plugin:0.0.8'
+        classpath 'com.getkeepsafe.dexcount:dexcount-gradle-plugin:0.6.1'
+        classpath 'org.jacoco:org.jacoco.core:0.7.7.201606060606'
+        classpath 'hu.supercluster:paperwork-plugin:1.2.7'
+        classpath 'com.github.ben-manes:gradle-versions-plugin:0.14.0'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
