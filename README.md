@@ -7,7 +7,33 @@
 
 
 ## Description
-Android boilerplate project to use as a reference when starting new Android projects. It provides basic architecture, tools and guidelines that we use when developing Android apps.
+Android boilerplate project to create new Android projects from. It provides basic architecture, tools and guidelines that we use when developing Android apps.
+
+## Getting started
+First clone the boilerplate repository. Next, if you want to copy the boilerplate into your own repository follow _Clone into your own repository_.
+If you just want to get started with customising things for your own project skip onto _Make it your own_.
+
+### Clone into your own repository
+Follow these steps if you have a repository with a branch you'd like to copy the boilerplate project into:
+```
+$ cd <path to boilerplate>
+$ git remote add newrepo <path to newrepo>
+$ git checkout --orphan copy
+$ git commit -m "Copying boilerplate"
+$ git push newrepo copy:<branch on new repo>
+```
+This will copy the boilerplate project without history to your own branch in your repository.
+
+### Make it your own
+Personalise the boilerplate for your own project:
+1. Rename `com.ustwo.boilerplate` packages to your own domain's stucture. E.g `com.mydomain.myapp`.
+    See [StackOverflow](http://stackoverflow.com/a/29092698) for a steps to easily accomplish this in Android Studio.
+
+2. Open `app/build.gradle` and change the following to match your new package names:
+    * `applicationId "com.mydomain.myapp"`
+    * `testInstrumentationRunner "com.mydomain.myapp.application.ApplicationTestRunner"`
+
+
 
 ## Modules
 This project consists of the following modules:
