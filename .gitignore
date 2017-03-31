@@ -99,3 +99,6 @@ fabric.properties
 # modules.xml
 # .idea/misc.xml 
 # *.ipr
+
+# OS files
+.DS_Store
