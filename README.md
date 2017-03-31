@@ -27,7 +27,7 @@ This will copy the boilerplate project without history to your own branch in you
 ### Make it your own
 Personalise the boilerplate for your own project:
 1. Rename `com.ustwo.boilerplate` packages to your own domain's stucture. E.g `com.mydomain.myapp`.
-    See [StackOverflow](http://stackoverflow.com/a/29092698) for a steps to easily accomplish this in Android Studio.
+    See [StackOverflow](http://stackoverflow.com/a/29092698) for steps to easily accomplish this in Android Studio.
 
 2. Open `app/build.gradle` and change the following to match your new package names:
     * `applicationId "com.mydomain.myapp"`
@@ -93,6 +93,8 @@ Please, take some time before starting a contribution to read our documentation
 
 ## Updating gitignore
 The gitignore file is generated using [GitIgnore.io](https://gitignore.io) and using [Android and Intellij](https://www.gitignore.io/api/android,intellij) for the selected technologies. This allows for easy updating when tools are updated or otherwise when required.
+
+Note that gitignore is not setup to ignore common OS files like `Thumbs.db` or  `.DS_Store`. For this we recommend creating a global gitignore file that will apply to all of your projects. This [guide](https://help.github.com/articles/ignoring-files/#create-a-global-gitignore) explains how. [GitIgnore.io](https://gitignore.io) provides content for a variety of OS to copy and paste in.
 
 ## Contact
 [open.source@ustwo.com](mailto:open.source@ustwo.com)
